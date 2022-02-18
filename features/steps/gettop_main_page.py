@@ -27,3 +27,6 @@ def verify_all_mac_items(context,expected_count):
 @when('Hover over MAC and click on each products and verify correct product_page opens')
 def hover_and_click_mac_product(context):
     context.app.header.hover_and_click_mac_product()
+
+
+
