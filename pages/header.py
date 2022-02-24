@@ -4,11 +4,12 @@ from pages.base_page import Page
 
 class Header(Page):
 
-    HOVER_WATCH = (By.CSS_SELECTOR, 'ul.header-nav a[href="https://gettop.us/product-category/accessories/watch/"]')
+    HOVER_WATCH = (By.CSS_SELECTOR, 'a[href="https://gettop.us/product-category/accessories/watch/"]')
     NUMBER_OF_WATCH_ITEMS = (By.CSS_SELECTOR, '#menu-item-471 ul.sub-menu a')
-    HOVER_MAC = (By.CSS_SELECTOR, 'ul.header-nav a[href="https://gettop.us/product-category/macbook/"]')
+    HOVER_MAC = (By.CSS_SELECTOR, 'a[href="https://gettop.us/product-category/macbook/"]')
     NUMBER_OF_MAC_ITEMS = (By.CSS_SELECTOR, "#menu-item-468 ul.sub-menu a")
     MAC_PRODUCT_TITLE = (By.CSS_SELECTOR, "h1.product-title")
+
 
 
     def hover_watch(self):
@@ -47,6 +48,8 @@ class Header(Page):
             self.driver.get(lists[i])
             actual_text = self.driver.find_element(*self.MAC_PRODUCT_TITLE).text
             assert expected_text[i] == actual_text, f"Actual doesnot match Expected"
+
+
 
 
 
